@@ -32,6 +32,15 @@ const About = () => {
     { number: "1000+", label: "Cakes Created" }
   ];
 
+  const galleryImages = [
+    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&h=300&fit=crop"
+  ];
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -212,11 +221,11 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+            {galleryImages.map((src, index) => (
+              <div key={index} className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <img 
-                  src={`https://images.unsplash.com/photo-${1578985545062 + item}?w=400&h=300&fit=crop`}
-                  alt={`Cake ${item}`}
+                  src={src}
+                  alt={`Cake ${index + 1}`}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
